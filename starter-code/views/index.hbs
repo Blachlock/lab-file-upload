@@ -5,6 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Welcome to IronTumblr</h1>
+    <h1>Bienvenido a la web de Posts</h1>
+    {{#if user}}
+    <a href="/profile" class="btn btn-light">Profile</a>
+    {{else}}
+    <a href="/signup" class="btn btn-light">Sign up</a>
+    <a href="/login" class="btn btn-light">Log in</a>
+    {{/if}}
+
+    <h3>Posts:</h3>
+    {{#each posts}}
+    <p>By: {{creatorId.username}}<img src="{{creatorId.picture.path}}" height="50px" style="object-fit: contain"></p>
+    <p>{{this.content}}</p>
+    <img src="{{this.picPath}}" alt="{{this.picName}}">
+    <a href="/new-comment/{{this._id}}" class="btn btn-light">New comment</a>
+    {{/each}}
   </body>
 </html>

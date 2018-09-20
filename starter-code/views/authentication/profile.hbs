@@ -1,0 +1,21 @@
+{{#if user}}
+  <div>
+    <h1>Este es tu perfil de usuario</h1>
+    <h1>Tu nombre es, <span style="color: red;">{{ user.username}}</span>. </h1>
+    <br>
+    <img src="{{user.picture.path}}" alt="{{user.picture.name}}">
+    <br>
+    <a href="/new-post" class="btn btn-dark">Create new post</a>
+
+    
+  </div>
+{{/if}}
+
+<h3>Your posts:</h3>
+
+{{#each posts}}
+    <p>{{this.content}}</p>
+    <img src="{{this.picpath}}" alt="{{this.picname}}">
+{{/each}}
+
+<a href="/logout">Logout</a>  ||  <a href="/">Index</a>
