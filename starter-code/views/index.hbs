@@ -15,10 +15,9 @@
 
     <h3>Posts:</h3>
     {{#each posts}}
-    <p>By: {{creatorId.username}}<img src="{{creatorId.picture.path}}" height="50px" style="object-fit: contain"></p>
+    {{!-- <p>By: {{creatorId.username}}<img src="{{creatorId.picture.path}}" height="50px" style="object-fit: contain"></p> --}}
     <p>{{this.content}}</p>
     <img src="{{this.picPath}}" alt="{{this.picName}}">
-    <a href="/new-comment/{{this._id}}" class="btn btn-light">New comment</a>
     {{/each}}
   </body>
 </html>

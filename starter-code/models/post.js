@@ -1,17 +1,11 @@
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const UserSchema = Schema({
-  content: String,
-  creatorId: {type: Schema.Types.ObjectId, ref:'User'},
-  picPath: String,
-  picName: String,
-}, 
-  {
-  timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" 
-  }
+const postSchema = new Schema({
+    content: String,
+    creatorId: {type: Schema.Types.ObjectId, ref: 'User'},
+    picpath: String,
+    picname: String
 });
 
-const User = mongoose.model('User', UserSchema);
-
-module.exports = Post;
+module.exports = mongoose.model('Post', postSchema);

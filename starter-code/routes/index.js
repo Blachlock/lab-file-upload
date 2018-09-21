@@ -6,9 +6,8 @@ const Post = require('../models/post');
 router.get('/', (req, res, next) => {
   const user = req.user;
   Post.find()
-  .populate('creatorId')
   .then(posts => {
-    res.render('index', { title: 'Lista de posts',user, posts })
+    res.render('index', { title: 'Lista de posts', user, posts })
   })
   .catch(e => console.log(e))
 });
